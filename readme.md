@@ -102,7 +102,7 @@ npm install eslint --save-dev
 ### Configuration
 
 ```
-npm eslint --init
+npx eslint --init
 ```
 
 **1 ère question : Comment souhaitez-vous utiliser ESLint ?**
