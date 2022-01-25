@@ -1,6 +1,4 @@
-import Dice from "./Dice";
 import Player from "./Player";
-import HTMLBoard from "./HTMLBoard";
 
 interface IGame {
   players: Player[];
