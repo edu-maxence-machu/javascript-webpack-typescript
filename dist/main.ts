@@ -31,61 +31,6 @@ eval("\n\n__webpack_require__(/*! core-js/es6 */ \"./node_modules/core-js/es6/in
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.ts */ \"./src/index.ts\");\n\n\n//# sourceURL=webpack://clean-javascript-webpack/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/battle.ts":
-/*!***********************!*\
-  !*** ./src/battle.ts ***!
-  \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, \"prototype\", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } else if (call !== void 0) { throw new TypeError(\"Derived constructors may only return object or undefined\"); } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Player = /*#__PURE__*/_createClass(function Player(army) {\n  _classCallCheck(this, Player);\n\n  this.army = army;\n});\n\nvar Ennemy = /*#__PURE__*/function (_Player) {\n  _inherits(Ennemy, _Player);\n\n  var _super = _createSuper(Ennemy);\n\n  function Ennemy() {\n    _classCallCheck(this, Ennemy);\n\n    return _super.apply(this, arguments);\n  }\n\n  return _createClass(Ennemy);\n}(Player);\n\nvar Ally = /*#__PURE__*/function (_Player2) {\n  _inherits(Ally, _Player2);\n\n  var _super2 = _createSuper(Ally);\n\n  function Ally() {\n    _classCallCheck(this, Ally);\n\n    return _super2.apply(this, arguments);\n  }\n\n  return _createClass(Ally);\n}(Player);\n\nvar Soldier = /*#__PURE__*/function () {\n  function Soldier(identifier) {\n    _classCallCheck(this, Soldier);\n\n    this._life = 100;\n    this.identifier = identifier;\n  }\n\n  _createClass(Soldier, [{\n    key: \"life\",\n    get: function get() {\n      return this._life;\n    }\n  }]);\n\n  return Soldier;\n}();\n\nvar Commander = /*#__PURE__*/function (_Soldier) {\n  _inherits(Commander, _Soldier);\n\n  var _super3 = _createSuper(Commander);\n\n  function Commander(identifier) {\n    var _this;\n\n    _classCallCheck(this, Commander);\n\n    _this = _super3.call(this, identifier);\n    _this._life = 200;\n    return _this;\n  }\n\n  return _createClass(Commander);\n}(Soldier);\n\nvar Battle = /*#__PURE__*/function () {\n  function Battle(ally, enemy) {\n    _classCallCheck(this, Battle);\n\n    this.ally = ally;\n    this.enemy = enemy;\n  }\n\n  _createClass(Battle, [{\n    key: \"start\",\n    value: function start() {\n      console.log(\"Battle started!\");\n      console.log(\"Player army: \", this.ally.army);\n      console.log(\"Ennemy army: \", this.enemy.army);\n    }\n  }, {\n    key: \"getTotalLife\",\n    value: function getTotalLife() {\n      var allyLife = this.ally.army.reduce(function (acc, soldier) {\n        return acc + soldier.life;\n      }, 0);\n      var enemyLife = this.enemy.army.reduce(function (acc, soldier) {\n        return acc + soldier.life;\n      }, 0);\n      return [allyLife, enemyLife];\n    }\n  }]);\n\n  return Battle;\n}();\n\nvar playerArmy = [new Soldier(1), new Soldier(2), new Soldier(3), new Commander(4)];\nvar ennemyArmy = [new Soldier(5), new Soldier(6), new Commander(7), new Commander(8)];\nvar player = new Player(playerArmy);\nvar ennemy = new Ennemy(ennemyArmy);\nvar battle = new Battle(player, ennemy);\nbattle.start();\nconsole.log(battle.getTotalLife());\n\n\n//# sourceURL=webpack://clean-javascript-webpack/./src/battle.ts?");
-
-/***/ }),
-
-/***/ "./src/class/employee.ts":
-/*!*******************************!*\
-  !*** ./src/class/employee.ts ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nvar Employee = /*#__PURE__*/function () {\n  function Employee(firstName, lastName) {\n    var salary = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;\n\n    _classCallCheck(this, Employee);\n\n    _defineProperty(this, \"salary\", 0);\n\n    this.id = 1;\n    this.firstName = firstName;\n    this.lastName = lastName;\n    this.salary = salary;\n  }\n\n  _createClass(Employee, [{\n    key: \"getSalary\",\n    get: function get() {\n      return this.salary;\n    }\n  }, {\n    key: \"setSalary\",\n    set: function set(salary) {\n      this.salary = salary;\n    }\n  }, {\n    key: \"mySalary\",\n    value: function mySalary() {\n      return this.salary;\n    }\n  }, {\n    key: \"getFullName\",\n    value: function getFullName() {\n      return \"\".concat(this.firstName, \" \").concat(this.lastName);\n    }\n  }]);\n\n  return Employee;\n}();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Employee);\n\n//# sourceURL=webpack://clean-javascript-webpack/./src/class/employee.ts?");
-
-/***/ }),
-
-/***/ "./src/class/heritage.ts":
-/*!*******************************!*\
-  !*** ./src/class/heritage.ts ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Cat\": () => (/* binding */ Cat)\n/* harmony export */ });\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && \"function\" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }, _typeof(obj); }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, \"prototype\", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } else if (call !== void 0) { throw new TypeError(\"Derived constructors may only return object or undefined\"); } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\n\nvar Cat = /*#__PURE__*/function () {\n  function Cat() {\n    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : \"\";\n\n    _classCallCheck(this, Cat);\n\n    this.name = name;\n  }\n\n  _createClass(Cat, [{\n    key: \"miaou\",\n    value: function miaou() {\n      console.log(\"miaou\");\n    }\n  }]);\n\n  return Cat;\n}();\n\nvar Person = /*#__PURE__*/function () {\n  function Person(id, firstName, lastName, age) {\n    _classCallCheck(this, Person);\n\n    this.id = id;\n    this.firstName = firstName;\n    this.lastName = lastName;\n    this.age = 12;\n  }\n\n  _createClass(Person, [{\n    key: \"sayHello\",\n    value: function sayHello() {\n      console.log(\"Hello\");\n    }\n  }, {\n    key: \"sayMyName\",\n    value: function sayMyName() {\n      console.log(\"\".concat(this.firstName, \" \").concat(this.lastName));\n    }\n  }]);\n\n  return Person;\n}();\n\nvar Employee = /*#__PURE__*/function (_Person) {\n  _inherits(Employee, _Person);\n\n  var _super = _createSuper(Employee);\n\n  function Employee(id, firstName, lastName, salary, age) {\n    var _this;\n\n    _classCallCheck(this, Employee);\n\n    _this = _super.call(this, id, firstName, lastName, age);\n    _this.salary = salary;\n    return _this;\n  }\n\n  _createClass(Employee, [{\n    key: \"mySalary\",\n    value: function mySalary() {\n      console.log(this.salary);\n    }\n  }, {\n    key: \"getSalary\",\n    get: function get() {\n      return this.salary;\n    }\n  }]);\n\n  return Employee;\n}(Person);\n\nvar Manager = /*#__PURE__*/function (_Employee) {\n  _inherits(Manager, _Employee);\n\n  var _super2 = _createSuper(Manager);\n\n  function Manager(id, firstName, lastName, salary, age) {\n    _classCallCheck(this, Manager);\n\n    return _super2.call(this, id, firstName, lastName, salary, age);\n  }\n\n  _createClass(Manager, [{\n    key: \"mySalary\",\n    value: function mySalary() {\n      console.log(this.salary * 2);\n    }\n  }, {\n    key: \"getSalary\",\n    get: function get() {\n      return 0;\n    }\n  }]);\n\n  return Manager;\n}(Employee);\n\nvar employee = new Employee(1, \"Evelyn\", \"Miller\", 2000, 40);\nvar manager = new Manager(1, \"Princess\", \"Leila\", 2000, 40);\nemployee.sayHello();\nmanager.sayHello();\nmanager.mySalary();\nemployee.salary; // Log: 2\n\nconsole.log(employee.getId());\nconsole.log(employee.salary); //employee.salary = 3000; erreur\n\n\n\n//# sourceURL=webpack://clean-javascript-webpack/./src/class/heritage.ts?");
-
-/***/ }),
-
-/***/ "./src/index.ts":
-/*!**********************!*\
-  !*** ./src/index.ts ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _class_employee__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./class/employee */ \"./src/class/employee.ts\");\n/* harmony import */ var _class_heritage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./class/heritage */ \"./src/class/heritage.ts\");\n/* harmony import */ var _battle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./battle */ \"./src/battle.ts\");\n\n/* \n    Variables et types primitifs\n*/\n\nvar age = 21;\nvar bool = true;\nvar name = \"John\";\nvar sentence = \"Hello \".concat(name); // eslint-disable-next-line prefer-const\n\nvar und = undefined; // und = 12; // erreur grâce à strictNullChecks\n\n/* Array */\n\nvar array = [1, 2, 3];\nvar tuple = [1, \"hello\"];\nvar optionalTuple = [1];\n/* Object */\n// Inférrence de type\n\nvar rex = {\n  name: \"Rex\",\n  age: 12\n};\nvar animal = {\n  name: \"Rex\",\n  age: 12,\n  miaou: function miaou() {\n    console.log(\"miaou\");\n  }\n};\n\nfunction getName(animal) {\n  return animal.name;\n}\n\nvar riri = [{\n  name: \"Riri\",\n  age: 2\n}]; // Type anonyme\n\nvar garfield = {\n  name: \"Garfield\",\n  firstName: \"Tom\",\n  age: 12,\n  lastName: \"Cat\",\n  miaou: function miaou() {\n    console.log(\"maou\");\n  }\n};\n/* \nconst robert: ICat = {\n  miaou: () => {\n    console.log(\"miaou\");\n  },\n}; */\n\nvar robert = new _class_heritage__WEBPACK_IMPORTED_MODULE_1__.Cat();\nconsole.log(\"cat\", garfield);\nvar employee = new _class_employee__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\"John\", \"Doe\");\nconsole.log(employee.getFullName());\nconsole.log(employee.getSalary);\nconsole.log(employee.mySalary()); //employee.firstName = \"Jane\"; // erreur\n//console.log(cat.color); // erreur car color n'existe pas\n\n\n\n\n\n\n//# sourceURL=webpack://clean-javascript-webpack/./src/index.ts?");
-
-/***/ }),
-
 /***/ "./node_modules/core-js/es6/index.js":
 /*!*******************************************!*\
   !*** ./node_modules/core-js/es6/index.js ***!
@@ -3251,41 +3196,11 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
 /******/ 	
 /******/ })()
 ;
