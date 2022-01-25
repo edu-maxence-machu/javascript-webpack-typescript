@@ -62,7 +62,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Hello webpack",
+      title: "Roll the dice !",
       template: "./src/index.html",
       inject: true,
       minify: {
