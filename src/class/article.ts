@@ -24,7 +24,7 @@ class Article implements IArticle {
     return this.price * this.qty;
   }
 
-  toHTML(): HTMLElement {
+  toHTMLTableRow(): HTMLElement {
     const HTMLRow = document.createElement("tr");
     const HTMLRef = document.createElement("td");
     HTMLRef.innerText = this.ref;
