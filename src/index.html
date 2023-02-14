@@ -7,9 +7,36 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <h1>Webpack starter</h1>
-    <img id="webpack-gif" alt="webpack-gif" />
+    <h1>Warehouse</h1>
 
-    <script type="text/javascript" src="main.js"></script>
+    <form name="add-article" id="add-article">
+      <label for="ref">Reference</label>
+      <input required type="text" name="ref" id="ref">
+
+      <label for="qty">Quantity</label>
+      <input required type="number" min="1" name="qty" id="qty">
+
+      <label for="price">Unit price</label>
+      <input required type="number" min="0.00" step="0.01" name="price" id="price">
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <label for="search">Search</label>
+    <input type="text" id="search"/>
+
+    <table id="warehouse">
+      <thead>
+        <tr>
+          <td>REF</td>
+          <td>QTY</td>
+          <td>PRICE</td>
+        </tr>
+      </thead>
+
+      <tbody>
+
+      </tbody>
+    </table>
   </body>
 </html>

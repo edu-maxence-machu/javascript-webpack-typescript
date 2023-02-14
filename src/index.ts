@@ -1,86 +1,53 @@
-import Employee from "./class/employee";
-/* 
-    Variables et types primitifs
-*/
-const age: number = 21;
-const bool: boolean = true;
-const name: string = "John";
-const sentence: string = `Hello ${name}`;
+import Article from "./class/article";
+import Warehouse from "./class/warehouse";
 
-// eslint-disable-next-line prefer-const
-let und: undefined = undefined;
-// und = 12; // erreur grâce à strictNullChecks
+const xbox = new Article("XB-SX", 5, 500);
+const ps5 = new Article("PS-5", 1, 550);
+const gamingComputer = new Article("GAMING-CPT", 10, 1000);
 
-/* Array */
+const warehouse = new Warehouse([xbox, ps5, gamingComputer]);
+warehouse.render();
 
-const array: number[] = [1, 2, 3];
-const tuple: [number, string] = [1, "hello"];
-const optionalTuple: [number, string?] = [1];
+const addForm: HTMLFormElement = document.getElementById(
+  "add-article"
+) as HTMLFormElement;
 
-/* Object */
+const searchInput: HTMLInputElement = document.getElementById(
+  "search"
+) as HTMLInputElement;
 
-// Inférrence de type
-type Dog = {
-  name: string;
-  age: number;
-};
-const rex: Dog = {
-  name: "Rex",
-  age: 12,
-};
+searchInput.addEventListener("keyup", (e) => {
+  const target: HTMLInputElement = e.target as HTMLInputElement;
+  const val = target.value;
+  if (val) {
+    try {
+      const article = warehouse.find(val);
+      warehouse.render(article);
+    } catch (e) {
+      console.error(e);
+      warehouse.render();
+    }
+  }
+});
 
-const animal: Dog | ICat = {
-  name: "Rex",
-  age: 12,
-  miaou(): void {
-    console.log("miaou");
-  },
-};
+addForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(addForm);
 
-function getName(animal: Dog | ICat): string {
-  return animal.name;
-}
+  const data = {
+    ref: formData.get("ref") as string,
+    qty: parseInt(formData.get("qty") as string),
+    price: parseFloat(formData.get("price") as string),
+  };
 
-const riri: Dog[] = [
-  {
-    name: "Riri",
-    age: 2,
-  },
-];
+  console.log(data);
 
-// Type anonyme
-type humanCat = IPerson & ICat;
+  if (data.ref == null || data.qty == null || data.price == null) {
+    alert("Forbidden null element");
+  }
 
-const garfield: humanCat = {
-  name: "Garfield",
-  firstName: "Tom",
-  age: 12,
-  lastName: "Cat",
-  miaou: () => {
-    console.log("maou");
-  },
-};
-/* 
-const robert: ICat = {
-  miaou: () => {
-    console.log("miaou");
-  },
-}; */
+  const article = new Article(data.ref, data.qty, data.price);
 
-const robert: ICat = new Cat();
-
-console.log("cat", garfield);
-
-const employee = new Employee("John", "Doe");
-console.log(employee.getFullName());
-console.log(employee.getSalary);
-console.log(employee.mySalary());
-
-//employee.firstName = "Jane"; // erreur
-
-//console.log(cat.color); // erreur car color n'existe pas
-
-import "./class/heritage";
-import "./battle";
-import { Cat, ICat, IPerson } from "./class/heritage";
-export {};
+  warehouse.addArticle(article);
+  warehouse.render();
+});
